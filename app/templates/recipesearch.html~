@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+ 	
+   	<p>Please enter your API Key:</p>
+   	
+   	<form action="" method='POST' novalidate>
+   	
+   	<p>
+   		{{ form.protein.label }}<br>
+   		{{ form.protein(size=20) }}
+   		{% for error in form.protein.errors %}
+   		 <span style="color: red;">[{{ error }}]</span>{% endfor %}<br>
+   		 
+   		{{ form.vegetable.label }}<br>
+   		{{ form.vegetable(size=20) }}
+   		{% for error in form.vegetable.errors %}
+   		 <span style="color: red;">[{{ error }}]</span>{% endfor %}<br>
+   		 
+   		{{ form.starch.label }}<br>
+   		{{ form.starch(size=20) }}
+   		{% for error in form.starch.errors %}
+   		 <span style="color: red;">[{{ error }}]</span>{% endfor %}<br>
+   		 
+   		{{ form.genre.label }}<br>
+   		{{ form.genre(size=20) }}
+   		{% for error in form.genre.errors %}
+   		 <span style="color: red;">[{{ error }}]</span>{% endfor %}<br>
+   		 
+   	</p>
+   	<p>{{ form.submit() }}</p>
+   	</form>
+   	
+        
+ {% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+ 	
+   	<p>Please your Planned Meals</p>
+   	
+   	<form action="" method='POST' novalidate>
+   	
+   	<p>
+   		{{ foodstorages.location.label }}<br>
+   		{{ foodstorages.location(size=20) }}
+   		{% for error in foodstorages.errors %}
+   		 <span style="color: red;">[{{ error }}]</span>{% endfor %}<br>
+		</p>
+	  	<p>{{ foodstorages.submit() }}</p>
+   	</form>
+   	
+   	<table>
+   	<h2><strong>Food Storage Locations</strong></h2><p>
+   		{% for storage in storages %}
+   		<tr>
+   			<td>{{ storage.location }}</td>
+   		</tr>
+   		{% endfor %}
+   	</p>
+   	</table>
+
+   	
+        
+ {% endblock %}

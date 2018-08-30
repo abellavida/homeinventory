@@ -1,0 +1,13 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block content %}
+<table>
+<th><strong>Recipe Search Results</strong></th>
+
+{%- for result in results -%}
+	<tr>
+		<td><a href="{{ result.link }}">{{ result.htmlTitle }}</a></td>
+	</tr>
+{% endfor %}
+</table>
+{% endblock %}

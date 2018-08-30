@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+ 	
+   	<p><strong>Please Enter your Planned Meals</strong></p>
+   	
+   	<form action="" method='POST' novalidate>
+   	
+   	<p>
+   		{{ mealform.breakfast.label }}<br>
+   		{{ mealform.breakfast(size=20) }}
+   		{% for error in mealform.errors %}
+   		 <span style="color: red;">[{{ error }}]</span>{% endfor %}<br>
+		</p>
+		<p>
+   		{{ mealform.lunch.label }}<br>
+   		{{ mealform.lunch(size=20) }}
+   		{% for error in mealform.errors %}
+   		 <span style="color: red;">[{{ error }}]</span>{% endfor %}<br>
+		</p>
+		<p>
+   		{{ mealform.dinner.label }}<br>
+   		{{ mealform.dinner(size=20) }}
+   		{% for error in mealform.errors %}
+   		 <span style="color: red;">[{{ error }}]</span>{% endfor %}<br>
+		</p>
+		<p>
+   		{{ mealform.date.label }}<br>
+   		{{ mealform.date(size=20) }}
+   		{% for error in mealform.errors %}
+   		 <span style="color: red;">[{{ error }}]</span>{% endfor %}<br>
+		</p>
+   	<p>{{ mealform.submit() }}</p>
+   	</form>
+   	
+   	<table>
+   	<h2><strong>Planned Meals</strong></h2><p>
+   		<tr>
+   			<td>Date</td>
+   			<td>Breakfast</td>
+   			<td>Lunch</td>
+   			<td>Dinner</td>
+   		</tr>
+   		{% for meal in mealplan %}
+   		<tr>
+   			<td>{{ meal.date.strftime('%Y-%m-%d')}}</td>
+   			<td>{{ meal.breakfast }}</td>
+   			<td>{{ meal.lunch }}</td>
+   			<td>{{ meal.dinner }}</td>
+   		</tr>
+   		{% endfor %}
+   	</p>
+   	</table>
+
+   	
+        
+ {% endblock %}

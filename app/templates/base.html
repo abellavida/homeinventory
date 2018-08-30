@@ -1,0 +1,37 @@
+{% block css_style %}
+
+{% endblock %}
+<html>
+    <head>
+
+      {%- if title -%}
+      <title>{{ title }} - Home Meal Planning </title>
+      {%- else -%}
+      <title>Welcome to Home Meal Planning</title>
+      {% endif %}
+    </head>
+    <body>
+	  	<div><strong><font size="5" color="green">Home Meal Planning: </font></strong>
+	     <a href={{ url_for('login') }}>Login</a>&nbsp&nbsp
+	     <a href={{ url_for('index') }}>Home</a>&nbsp&nbsp
+	     <a href={{ url_for('recipesearch') }}>Recipe Search</a>&nbsp&nbsp
+	     <a href={{ url_for('recipesearchresults') }}>Recipe Search Results</a>&nbsp&nbsp
+	     <a href={{ url_for('logout') }}>Logout</a>&nbsp&nbsp
+        <hr>
+      </div>
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+        
+        
+    </body>
+</html>

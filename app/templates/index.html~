@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+   	<h1>Welcome {{ name }} to Home Meal Planning App, Work In Progress</h1>
+   	
+		<h2>What would you like to do today?</h2>
+   	<div><strong><font size="4" color="green">
+	     <a href={{ url_for('index') }}>Home</a><br>
+	     <a href={{ url_for('recipesearch') }}>Recipe Search</a><br>
+	     <a href={{ url_for('foodstorages') }}>Food Storage Locations</a><br>
+	     <a href={{ url_for('planmeals') }}>Meal Planning</a><br>
+        </font></strong><br>
+        <hr>
+      </div>
+        
+ {% endblock %}
